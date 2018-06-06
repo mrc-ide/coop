@@ -4,7 +4,7 @@
 \alias{sa}
 \title{Simmulated Annealing}
 \usage{
-sa(input_data, input_budget, outer, inner, free = 0)
+sa(input_data, input_budget, outer, inner, frozen = 5000, free = 0)
 }
 \arguments{
 \item{input_data}{Data: must contain ISO, DIDE_CODE cost and y columns}
@@ -14,6 +14,8 @@ sa(input_data, input_budget, outer, inner, free = 0)
 \item{outer}{Outer (temperature step) iterations}
 
 \item{inner}{Inner interations}
+
+\item{frozen}{Number of attempts with no improvement in final frozen search}
 
 \item{free}{Free funds}
 }
