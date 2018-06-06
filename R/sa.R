@@ -6,11 +6,12 @@
 #' @param input_budget  Data: must contain ISO and budget column
 #' @param outer  Outer (temperature step) iterations
 #' @param inner Inner interations
+#' @param frozen Number of attempts with no improvement in final frozen search
 #' @param free Free funds
 #'
 #' @return A list with the solution index and trace
 #' @export
-sa <- function(input_data, input_budget, outer, inner, free = 0){
+sa <- function(input_data, input_budget, outer, inner, frozen = 5000, free = 0){
 
   # Isolate vectors from dataframe
   cost <- input_data$cost
@@ -41,7 +42,7 @@ sa <- function(input_data, input_budget, outer, inner, free = 0){
   # Calculate temperature decay
   temperature_decay <- decay(starting_temperature = temp,
                              outer_iterations = outer,
-                             proportion_greedy = 0.1)
+                             proportion_greedy = 0.25)
 
   # Set counters and tracing vectors
   solution_counter <- 1
@@ -81,7 +82,7 @@ sa <- function(input_data, input_budget, outer, inner, free = 0){
     cur_y <- sum(y[cur_solution])
     trace[solution_counter] <- cur_y
     solution_counter <- solution_counter + 1
-    if(all(diff(tail(trace[!is.na(trace)], 1000)) == 0)) break
+    if(all(diff(tail(trace[!is.na(trace)], frozen)) == 0)) break
   }
 
   trace <- trace[!is.na(trace)]

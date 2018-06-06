@@ -38,6 +38,6 @@ dim(large_data)
 devtools::use_data(large_data, overwrite = TRUE)
 devtools::use_data(large_data_budget, overwrite = TRUE)
 
-#t1 <- sa(large_data, large_data_budget, 100000, 5, 0)
+#t1 <- sa(large_data, large_data_budget, outer = 50000, inner = 5, frozen = 5000, free = 2000)
 #plot(t1$trace, t = 'l')
 #table(large_data[t1$solution, "y"])
