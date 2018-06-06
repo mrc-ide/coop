@@ -27,14 +27,17 @@ sa <- function(input_data, input_budget, outer, inner, free = 0){
 
   # Set starting solution with up moves
   cur_solution  <- min_solution
-  for(i in 1:000){
+  for(i in 1:1000){
     cur_solution <- up(current_solution = cur_solution, max_solution = max_solution,
                        cost = cost, ISO = ISO, budget = budget, free = free)
   }
   cur_y <- sum(y[cur_solution])
 
   # Estimate starting temperature
-  temp <- find_starting_temp(0.9, cur_solution, max_solution, min_solution, cost, ISO, budget, free)
+  temp <- find_starting_temp(target_acceptance = 0.9,
+                             current_solution = cur_solution, cur_y = cur_y,
+                             max_solution = max_solution, min_solution = min_solution,
+                             y = y, cost = cost, ISO = ISO, budget = budget, free = free)
   # Calculate temperature decay
   temperature_decay <- decay(starting_temperature = temp,
                              outer_iterations = outer,
@@ -82,6 +85,6 @@ sa <- function(input_data, input_budget, outer, inner, free = 0){
   }
 
   trace <- trace[!is.na(trace)]
-  return(list(solution = solution, trace = trace))
+  return(list(solution = cur_solution, trace = trace))
 }
 

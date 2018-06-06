@@ -4,8 +4,8 @@
 \alias{find_starting_temp}
 \title{Starting temperature}
 \usage{
-find_starting_temp(target_acceptance, current_solution, max_solution,
-  min_solution, cost, ISO, budget, free)
+find_starting_temp(target_acceptance, current_solution, cur_y, max_solution,
+  min_solution, y, cost, ISO, budget, free)
 }
 \arguments{
 \item{free}{Free funds}
