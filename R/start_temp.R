@@ -12,7 +12,7 @@ find_starting_temp <- function(target_acceptance,
                                y, cost, ISO, budget, free){
 
   message("Searching for starting temperature")
-  temp <- 1
+  temp <- 5
   repeat{
     accepted <- 0
     for(i in 1:500){

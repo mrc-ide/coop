@@ -6,12 +6,13 @@
 #' @param input_budget  Data: must contain ISO and budget column
 #' @param outer  Outer (temperature step) iterations
 #' @param inner Inner interations
+#' @param proportion_greedy Set temperature decay
 #' @param frozen Number of attempts with no improvement in final frozen search
 #' @param free Free funds
 #'
 #' @return A list with the solution index and trace
 #' @export
-sa <- function(input_data, input_budget, outer, inner, frozen = 5000, free = 0){
+sa <- function(input_data, input_budget, outer, inner, proportion_greedy = 0.8, frozen = 5000, free = 0){
 
   # Isolate vectors from dataframe
   cost <- input_data$cost
@@ -21,10 +22,15 @@ sa <- function(input_data, input_budget, outer, inner, frozen = 5000, free = 0){
   max_solution <- maxs(min_solution, nrow(input_data))
   # Extract corresponding ISOs and budgets
   ISO <- input_data$ISO[min_solution]
-  budget <- unlist(input_budget[which(input_budget$ISO == unique(ISO)),"budget"])
+
+  budget <- unlist(input_budget[match(unique(ISO), input_budget$ISO), "budget"])
+  #budget <- unlist(input_budget[which(input_budget$ISO == unique(ISO)),"budget"])
   # Convert ISO to numeric index for optimisation
   ISO <- as.numeric(factor(ISO))
 
+  if(!affordable(min_solution, cost, ISO, budget, free)){
+    stop("Minimum solution not affordable")
+  }
 
   # Set starting solution with up moves
   cur_solution  <- min_solution
@@ -42,7 +48,8 @@ sa <- function(input_data, input_budget, outer, inner, frozen = 5000, free = 0){
   # Calculate temperature decay
   temperature_decay <- decay(starting_temperature = temp,
                              outer_iterations = outer,
-                             proportion_greedy = 0.25)
+                             proportion_greedy = proportion_greedy)
+  message("Decay set as: ", temperature_decay)
 
   # Set counters and tracing vectors
   solution_counter <- 1

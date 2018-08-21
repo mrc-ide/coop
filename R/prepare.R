@@ -5,6 +5,7 @@
 #' @param input_data_raw Raw input data
 #'
 #' @return Sorted, non-dominated data
+#' @export
 prepare <- function(input_data_raw){
   stopifnot(all(c("ISO", "DIDE_CODE", "cost", "y") %in% colnames(input_data_raw)))
 
