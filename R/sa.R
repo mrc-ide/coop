@@ -93,6 +93,6 @@ sa <- function(input_data, input_budget, outer, inner, proportion_greedy = 0.8, 
   }
 
   trace <- trace[!is.na(trace)]
-  return(list(solution = cur_solution, trace = trace))
+  return(list(solution = input_data[cur_solution, ], trace = trace))
 }
 
