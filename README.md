@@ -5,7 +5,7 @@
 coop
 ====
 
-Coop is a generalised approach to budget constrained optimisations using simulated annealing. You can use coop to find optimal combinations of scenarios (e.g. intervention mixes across districts) which minimise a target outcome (e.g. malaria cases). Optimal outcomes can be budget constrained at multiple levels (e.g. the solution must comply with global, regional and country budgets).
+Coop is a generalised approach to budget constrained optimisations using simulated annealing. You can use coop to find optimal combinations of scenarios (e.g. intervention mixes across districts) which minimise a target outcome (e.g. malaria cases). 
 
 Installation
 ------------
