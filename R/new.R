@@ -11,7 +11,7 @@
 up <- function(current_solution, max_solution, cost, ISO, budget, free){
   new_solution <- move_up(solution = current_solution, max_solution = max_solution)
   afford <- affordable(new_solution, cost, ISO, budget, free)
-  if(identical(new_solution, max_solution)){
+  if(identical(new_solution, max_solution) & afford){
     stop("Maximum of all options is affordable: no need to optimise")
   }
   if(afford) {
