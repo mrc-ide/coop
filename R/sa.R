@@ -87,11 +87,16 @@ sa <- function(input_data, input_budget, outer, inner, proportion_greedy = 0.8, 
   }
 
   # Run up move only for final X iterations (These will all be better if data is sorted correctly)
+  message("")
+  message("Frozen search started")
   repeat{
+
     cur_solution <- up(cur_solution, max_solution, cost, ISO, budget, free)
     cur_y <- sum(y[cur_solution])
     trace[solution_counter] <- cur_y
     solution_counter <- solution_counter + 1
+    m0 <- mean(diff(tail(trace[!is.na(trace)], frozen)) == 0)
+    cat("\r", "Frozen search progress = ", round(m0 *100), "%")
     if(all(diff(tail(trace[!is.na(trace)], frozen)) == 0)) break
   }
 
