@@ -3,11 +3,18 @@
 #' Extracts the index of minimum solutions for each admin
 #'
 #' @param DIDE_CODE vector of DIDE_CODEs
+#' @param cl Country level
 #'
 #' @return Index of minimum solutions
 #' @export
-mins <- function(DIDE_CODE){
-  c(1, which(diff(DIDE_CODE) != 0) + 1)
+mins <- function(DIDE_CODE, cl = FALSE){
+  if(cl){
+    x <- c(1, 1 + cumsum(as.vector(table(input_data$ISO))))
+    m1 <- x[-length(x)]
+  } else {
+    m1 <- c(1, which(diff(DIDE_CODE) != 0) + 1)
+  }
+  return(m1)
 }
 
 #' Maximum solution

@@ -4,10 +4,12 @@
 \alias{mins}
 \title{Minimum solution}
 \usage{
-mins(DIDE_CODE)
+mins(DIDE_CODE, cl = FALSE)
 }
 \arguments{
 \item{DIDE_CODE}{vector of DIDE_CODEs}
+
+\item{cl}{Country level}
 }
 \value{
 Index of minimum solutions

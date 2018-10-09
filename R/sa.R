@@ -20,14 +20,8 @@ sa <- function(input_data, input_budget, outer, inner, proportion_greedy = 0.8, 
   y <- input_data$y
 
   # Estimate min and max solution indices
-  min_solution <- mins(input_data$DIDE_CODE)
+  min_solution <- mins(input_data$DIDE_CODE, cl)
   max_solution <- maxs(min_solution, nrow(input_data))
-  if(cl){
-    x <- c(1, 1 + cumsum(as.vector(table(input_data$ISO))))
-    min_solution <- x[-length(x)]
-    #min_solution <- mins(input_data$ISO)
-    max_solution <- maxs(min_solution, nrow(input_data))
-  }
 
   # Extract corresponding ISOs and budgets
   ISO <- input_data$ISO[min_solution]
