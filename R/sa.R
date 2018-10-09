@@ -9,17 +9,26 @@
 #' @param proportion_greedy Set temperature decay
 #' @param frozen Number of attempts with no improvement in final frozen search
 #' @param free Free funds
+#' @param cl Country level (default is FALSE)
 #'
 #' @return A list with the solution index and trace
 #' @export
-sa <- function(input_data, input_budget, outer, inner, proportion_greedy = 0.8, frozen = 5000, free = 0){
+sa <- function(input_data, input_budget, outer, inner, proportion_greedy = 0.8, frozen = 5000, free = 0, cl = FALSE){
 
   # Isolate vectors from dataframe
   cost <- input_data$cost
   y <- input_data$y
+
   # Estimate min and max solution indices
   min_solution <- mins(input_data$DIDE_CODE)
   max_solution <- maxs(min_solution, nrow(input_data))
+  if(cl){
+    x <- c(1, 1 + cumsum(as.vector(table(input_data$ISO))))
+    min_solution <- x[-length(x)]
+    #min_solution <- mins(input_data$ISO)
+    max_solution <- maxs(min_solution, nrow(input_data))
+  }
+
   # Extract corresponding ISOs and budgets
   ISO <- input_data$ISO[min_solution]
 
