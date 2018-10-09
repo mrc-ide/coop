@@ -17,4 +17,3 @@ Boolean indicating if proposed solution is affordable or not
 \description{
 Check a solution is affordable
 }
-

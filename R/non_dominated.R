@@ -26,5 +26,18 @@ non_dominated <- function(input_data){
   dplyr::bind_rows(l1)
 }
 
+#' Non-dominated country
+#'
+#' Remove non dominated solutions from dataset (country-level)
+#'
+#' @inheritParams sa
+#'
+#' @return inputdata with dominated solutions removed
+non_dominated_country <- function(input_data){
+  id <- split(input_data, input_data$ISO)
+  l1 <- lapply(id, frontier)
+  dplyr::bind_rows(l1)
+}
+
 
 

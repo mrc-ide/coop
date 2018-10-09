@@ -14,4 +14,3 @@ progress(outer_iterations, counter)
 \description{
 A pretty progress bar to monitor progress.
 }
-

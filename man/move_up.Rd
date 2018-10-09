@@ -15,4 +15,3 @@ Solution with one up move
 \description{
 Moves the solution for a single admin unit randomly up
 }
-

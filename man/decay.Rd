@@ -21,4 +21,3 @@ For a given starting temp and final proportion of greedy moves, calculate the
 temperature decay such that the temperature is sufficiently low to ensure
 greddy search for the requested final proportion of the algorithm
 }
-

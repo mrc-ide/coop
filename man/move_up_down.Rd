@@ -16,4 +16,3 @@ Solution with one up and one down move
 Moves the solution for a single admin unit randomly up and for a different single
 admin unit randomly down
 }
-

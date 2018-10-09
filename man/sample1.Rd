@@ -15,4 +15,3 @@ single sample from the x
 \description{
 Samples x, return x if length(x) = 1, else a single sample from x
 }
-

@@ -16,4 +16,3 @@ A set of block non-dominated solutions.
 Internal function for finding the non-dominated solutions in a single
 block
 }
-

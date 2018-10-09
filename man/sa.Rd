@@ -28,4 +28,3 @@ A list with the solution index and trace
 \description{
 SA algorithm
 }
-

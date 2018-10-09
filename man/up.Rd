@@ -17,4 +17,3 @@ A solution
 \description{
 Proposes an affordable new (or the same) solution with a single up move
 }
-

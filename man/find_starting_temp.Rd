@@ -4,8 +4,8 @@
 \alias{find_starting_temp}
 \title{Starting temperature}
 \usage{
-find_starting_temp(target_acceptance, current_solution, cur_y, max_solution,
-  min_solution, y, cost, ISO, budget, free)
+find_starting_temp(target_acceptance, current_solution, cur_y,
+  max_solution, min_solution, y, cost, ISO, budget, free)
 }
 \arguments{
 \item{free}{Free funds}
@@ -17,4 +17,3 @@ A starting temperature
 Increases starting temperature until the acceptence rate over 500 iterations is
 greater than the target acceptance rate
 }
-

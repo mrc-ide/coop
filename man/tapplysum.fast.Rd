@@ -17,4 +17,3 @@ Group sums
 \description{
 Optimised group-sum (lifted from ecoreg package)
 }
-

@@ -15,4 +15,3 @@ Index of minimum solutions
 \description{
 Extracts the index of minimum solutions for each admin
 }
-

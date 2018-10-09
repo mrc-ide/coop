@@ -17,4 +17,3 @@ Index of maximum solutions
 \description{
 Extracts the index of maximum solutions for each admin
 }
-

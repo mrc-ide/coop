@@ -19,4 +19,3 @@ Boolean accepting or rejecting proposal
 \description{
 Accept or reject a new solution at a given temperature
 }
-
