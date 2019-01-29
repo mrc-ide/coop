@@ -4,10 +4,10 @@
 \alias{mins}
 \title{Minimum solution}
 \usage{
-mins(DIDE_CODE, cl = FALSE)
+mins(input_data, cl = FALSE)
 }
 \arguments{
-\item{DIDE_CODE}{vector of DIDE_CODEs}
+\item{input_data}{Input data}
 
 \item{cl}{Country level}
 }

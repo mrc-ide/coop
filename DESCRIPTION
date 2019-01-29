@@ -1,14 +1,14 @@
 Package: coop
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Budget COnstrained OPtimisation using simmulated annealing
+Version: 0.1.1
+Author: Peter Winskill
+Maintainer: Peter Winskill <p.winskill@imperial.ac.uk>
+Description: Coop is a generalised approach to budget constrained optimisations using simulated annealing. 
+    You can use coop to find optimal combinations of scenarios (e.g. intervention mixes across districts) which minimise a target outcome (e.g. malaria cases).
+License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests:
     testthat
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
