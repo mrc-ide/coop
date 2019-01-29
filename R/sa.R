@@ -90,7 +90,6 @@ sa <- function(input_data, input_budget, outer, inner, proportion_greedy = 0.8, 
   message("")
   message("Frozen search started")
   repeat{
-
     cur_solution <- up(cur_solution, max_solution, cost, ISO, budget, free)
     cur_y <- sum(y[cur_solution])
     trace[solution_counter] <- cur_y

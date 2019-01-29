@@ -20,6 +20,7 @@ frontier <- function(x){
 #' @inheritParams sa
 #'
 #' @return inputdata with dominated solutions removed
+#' @export
 non_dominated <- function(input_data){
   id <- split(input_data, input_data$DIDE_CODE)
   l1 <- lapply(id, frontier)
