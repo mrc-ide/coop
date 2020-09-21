@@ -31,3 +31,9 @@ small_data_budget <- cb(4, 4)
 usethis::use_data(small_data, overwrite = TRUE)
 usethis::use_data(small_data_budget, overwrite = TRUE)
 
+##### Large dataset
+large_data <- cd(26, 10)
+large_data_budget <- cb(26, 10)
+dim(large_data)
+usethis:::use_data(large_data, overwrite = TRUE)
+usethis::use_data(large_data_budget, overwrite = TRUE)
