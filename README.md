@@ -22,5 +22,5 @@ You can install coop from github with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("pwinskill/coop")
+remotes::install_github("pwinskill/coop")
 ```
