@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
-<img src="https://github.com/pwinskill/coop/blob/master/coop_logo.jpg" alt="Drawing" align="centre" style="width: 200px; border: 0;"/>
+<img src="https://github.com/pwinskill/coop/blob/master/coop_logo.jpg" alt="Drawing" align="centre" style="width: 100px; border: 0;"/>
 
 # coop
 
@@ -25,5 +25,5 @@ You can install coop from github with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("pwinskill/coop")
+remotes::install_github("pwinskill/coop")
 ```
