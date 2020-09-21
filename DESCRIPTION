@@ -4,8 +4,8 @@ Title: Budget COnstrained OPtimisation using simmulated annealing
 Version: 0.1.2
 Author: Peter Winskill
 Maintainer: Peter Winskill <p.winskill@imperial.ac.uk>
-Description: Coop is a generalised approach to budget constrained optimisations using simulated annealing. 
-    You can use coop to find optimal combinations of scenarios (e.g. intervention mixes in different areas) which minimise a target outcome (e.g. cases or deaths).
+Description: Coop is a generalised heuristic for budget constrained optimisations using simulated annealing. 
+    You can use coop to search for optimal combinations of scenarios (e.g. intervention mixes in different areas) which minimise a target outcome (e.g. cases or deaths).
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -13,4 +13,4 @@ Suggests:
     testthat
 RoxygenNote: 7.1.1
 Depends:
-    R (>= 2.10)
+    R (>= 4.0)
