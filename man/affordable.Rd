@@ -4,7 +4,7 @@
 \alias{affordable}
 \title{Afford}
 \usage{
-affordable(solution, cost, ISO, budget, free)
+affordable(solution, cost, budget_block, budget, free)
 }
 \arguments{
 \item{solution}{Proposed solution (vector of indices)}

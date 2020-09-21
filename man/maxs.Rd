@@ -15,5 +15,5 @@ maxs(min_solution, n)
 Index of maximum solutions
 }
 \description{
-Extracts the index of maximum solutions for each admin
+Extracts the index of maximum solutions
 }

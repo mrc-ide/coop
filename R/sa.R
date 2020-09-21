@@ -2,8 +2,8 @@
 #'
 #' SA algorithm
 #'
-#' @param input_data Data: must contain ISO, DIDE_CODE cost and y columns
-#' @param input_budget  Data: must contain ISO and budget column
+#' @param input_data Data: must contain budget_block, solution_block cost and y columns
+#' @param input_budget  Data: must contain budget_block and budget column
 #' @param outer  Outer (temperature step) iterations
 #' @param inner Inner interations
 #' @param proportion_greedy Set temperature decay
@@ -15,7 +15,7 @@
 sa <- function(input_data, input_budget, outer, inner,
                proportion_greedy = 0.8, frozen = 5000, free = 0){
 
-  # Isolate vectors from dataframe
+  # budget_blocklate vectors from dataframe
   cost <- input_data$cost
   y <- input_data$y
 
@@ -23,15 +23,15 @@ sa <- function(input_data, input_budget, outer, inner,
   min_solution <- mins(input_data)
   max_solution <- maxs(min_solution, nrow(input_data))
 
-  # Extract corresponding ISOs and budgets
-  ISO <- input_data$ISO[min_solution]
+  # Extract corresponding budget_blocks and budgets
+  budget_block <- input_data$budget_block[min_solution]
 
-  budget <- unlist(input_budget[match(unique(ISO), input_budget$ISO), "budget"])
-  #budget <- unlist(input_budget[which(input_budget$ISO == unique(ISO)),"budget"])
-  # Convert ISO to numeric index for optimisation
-  ISO <- as.numeric(factor(ISO))
+  budget <- unlist(input_budget[match(unique(budget_block), input_budget$budget_block), "budget"])
+  #budget <- unlist(input_budget[which(input_budget$budget_block == unique(budget_block)),"budget"])
+  # Convert budget_block to numeric index for optimisation
+  budget_block <- as.numeric(factor(budget_block))
 
-  if(!affordable(min_solution, cost, ISO, budget, free)){
+  if(!affordable(min_solution, cost, budget_block, budget, free)){
     stop("Minimum solution not affordable")
   }
 
@@ -39,7 +39,7 @@ sa <- function(input_data, input_budget, outer, inner,
   cur_solution  <- min_solution
   for(i in 1:1000){
     cur_solution <- up(current_solution = cur_solution, max_solution = max_solution,
-                       cost = cost, ISO = ISO, budget = budget, free = free)
+                       cost = cost, budget_block = budget_block, budget = budget, free = free)
   }
   cur_y <- sum(y[cur_solution])
 
@@ -47,7 +47,7 @@ sa <- function(input_data, input_budget, outer, inner,
   temp <- find_starting_temp(target_acceptance = 0.9,
                              current_solution = cur_solution, cur_y = cur_y,
                              max_solution = max_solution, min_solution = min_solution,
-                             y = y, cost = cost, ISO = ISO, budget = budget, free = free)
+                             y = y, cost = cost, budget_block = budget_block, budget = budget, free = free)
   # Calculate temperature decay
   temperature_decay <- decay(starting_temperature = temp,
                              outer_iterations = outer,
@@ -69,7 +69,7 @@ sa <- function(input_data, input_budget, outer, inner,
     while(inner_steps_counter <= inner){
 
       # Propose
-      try_solution <- updown(cur_solution, max_solution, min_solution, cost, ISO, budget, free)
+      try_solution <- updown(cur_solution, max_solution, min_solution, cost, budget_block, budget, free)
       try_y <- sum(y[try_solution])
       # Accept or Reject
       if(accept_reject(cur_y, try_y, temp)){
@@ -90,7 +90,7 @@ sa <- function(input_data, input_budget, outer, inner,
   message("")
   message("Frozen search started")
   repeat{
-    cur_solution <- up(cur_solution, max_solution, cost, ISO, budget, free)
+    cur_solution <- up(cur_solution, max_solution, cost, budget_block, budget, free)
     cur_y <- sum(y[cur_solution])
     trace[solution_counter] <- cur_y
     solution_counter <- solution_counter + 1

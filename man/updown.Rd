@@ -4,8 +4,15 @@
 \alias{updown}
 \title{Propose solution: up and down}
 \usage{
-updown(current_solution, max_solution, min_solution, cost, ISO, budget,
-  free)
+updown(
+  current_solution,
+  max_solution,
+  min_solution,
+  cost,
+  budget_block,
+  budget,
+  free
+)
 }
 \arguments{
 \item{current_solution}{Current solution}

@@ -15,5 +15,5 @@ mins(input_data, cl = FALSE)
 Index of minimum solutions
 }
 \description{
-Extracts the index of minimum solutions for each admin
+Extracts the index of minimum solutions
 }

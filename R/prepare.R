@@ -7,10 +7,10 @@
 #' @return Sorted, non-dominated data
 #' @export
 prepare <- function(input_data_raw){
-  stopifnot(all(c("ISO", "DIDE_CODE", "cost", "y") %in% colnames(input_data_raw)))
+  stopifnot(all(c("budget_block", "solution_block", "cost", "y") %in% colnames(input_data_raw)))
 
   prepped_data <- input_data_raw %>%
-    dplyr::arrange(ISO, DIDE_CODE, cost) %>%
+    dplyr::arrange(budget_block, solution_block, cost) %>%
     non_dominated()
 
   return(prepped_data)
@@ -25,10 +25,10 @@ prepare <- function(input_data_raw){
 #' @return Sorted, non-dominated data
 #' @export
 prepare_country <- function(input_data_raw){
-  stopifnot(all(c("ISO", "cost", "y") %in% colnames(input_data_raw)))
+  stopifnot(all(c("budget_block", "cost", "y") %in% colnames(input_data_raw)))
 
   prepped_data <- input_data_raw %>%
-    dplyr::arrange(ISO, cost) %>%
+    dplyr::arrange(budget_block, cost) %>%
     non_dominated_country()
 
   return(prepped_data)

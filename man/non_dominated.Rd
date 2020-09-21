@@ -7,7 +7,7 @@
 non_dominated(input_data)
 }
 \arguments{
-\item{input_data}{Data: must contain ISO, DIDE_CODE cost and y columns}
+\item{input_data}{Data: must contain budget_block, solution_block cost and y columns}
 }
 \value{
 inputdata with dominated solutions removed

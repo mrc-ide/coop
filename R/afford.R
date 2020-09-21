@@ -9,8 +9,8 @@
 #'
 #' @return Boolean indicating if proposed solution is affordable or not
 #' @export
-affordable <- function(solution, cost, ISO, budget, free){
-  overbudget <- sum(pmax(0, tapplysum.fast(cost[solution], ISO) - budget))
+affordable <- function(solution, cost, budget_block, budget, free){
+  overbudget <- sum(pmax(0, tapplysum.fast(cost[solution], budget_block) - budget))
   overbudget <= free
 }
 

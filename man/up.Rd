@@ -4,7 +4,7 @@
 \alias{up}
 \title{Propose solution: up}
 \usage{
-up(current_solution, max_solution, cost, ISO, budget, free)
+up(current_solution, max_solution, cost, budget_block, budget, free)
 }
 \arguments{
 \item{current_solution}{Current solution}

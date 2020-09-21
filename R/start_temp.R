@@ -9,14 +9,14 @@
 #' @export
 find_starting_temp <- function(target_acceptance,
                                current_solution,  cur_y, max_solution, min_solution,
-                               y, cost, ISO, budget, free){
+                               y, cost, budget_block, budget, free){
 
   message("Searching for starting temperature")
   temp <- 5
   repeat{
     accepted <- 0
     for(i in 1:500){
-      try_solution <- updown(current_solution, max_solution, min_solution, cost, ISO, budget, free)
+      try_solution <- updown(current_solution, max_solution, min_solution, cost, budget_block, budget, free)
       try_y <- sum(y[try_solution])
       if(accept_reject(cur_y, try_y, temp)){
         accepted <- accepted + 1

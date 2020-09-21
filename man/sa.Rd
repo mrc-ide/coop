@@ -4,13 +4,20 @@
 \alias{sa}
 \title{Simmulated Annealing}
 \usage{
-sa(input_data, input_budget, outer, inner, proportion_greedy = 0.8,
-  frozen = 5000, free = 0, cl = FALSE)
+sa(
+  input_data,
+  input_budget,
+  outer,
+  inner,
+  proportion_greedy = 0.8,
+  frozen = 5000,
+  free = 0
+)
 }
 \arguments{
-\item{input_data}{Data: must contain ISO, DIDE_CODE cost and y columns}
+\item{input_data}{Data: must contain budget_block, solution_block cost and y columns}
 
-\item{input_budget}{Data: must contain ISO and budget column}
+\item{input_budget}{Data: must contain budget_block and budget column}
 
 \item{outer}{Outer (temperature step) iterations}
 
@@ -21,8 +28,6 @@ sa(input_data, input_budget, outer, inner, proportion_greedy = 0.8,
 \item{frozen}{Number of attempts with no improvement in final frozen search}
 
 \item{free}{Free funds}
-
-\item{cl}{Country level (default is FALSE)}
 }
 \value{
 A list with the solution index and trace

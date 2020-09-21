@@ -22,7 +22,7 @@ frontier <- function(x){
 #' @return inputdata with dominated solutions removed
 #' @export
 non_dominated <- function(input_data){
-  id <- split(input_data, input_data$DIDE_CODE)
+  id <- split(input_data, input_data$solution_block)
   l1 <- lapply(id, frontier)
   dplyr::bind_rows(l1)
 }
@@ -35,7 +35,7 @@ non_dominated <- function(input_data){
 #'
 #' @return inputdata with dominated solutions removed
 non_dominated_country <- function(input_data){
-  id <- split(input_data, input_data$ISO)
+  id <- split(input_data, input_data$budget_block)
   l1 <- lapply(id, frontier)
   dplyr::bind_rows(l1)
 }

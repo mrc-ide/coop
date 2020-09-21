@@ -8,9 +8,9 @@
 #'
 #' @return A solution
 #' @export
-up <- function(current_solution, max_solution, cost, ISO, budget, free){
+up <- function(current_solution, max_solution, cost, budget_block, budget, free){
   new_solution <- move_up(solution = current_solution, max_solution = max_solution)
-  afford <- affordable(new_solution, cost, ISO, budget, free)
+  afford <- affordable(new_solution, cost, budget_block, budget, free)
   if(identical(new_solution, max_solution) & afford){
     stop("Maximum of all options is affordable: no need to optimise")
   }
@@ -31,9 +31,9 @@ up <- function(current_solution, max_solution, cost, ISO, budget, free){
 #'
 #' @return A solution
 #' @export
-updown <- function(current_solution, max_solution, min_solution, cost, ISO, budget, free){
+updown <- function(current_solution, max_solution, min_solution, cost, budget_block, budget, free){
   new_solution <- move_up_down(current_solution, min_solution, max_solution)
-  afford <- affordable(new_solution, cost, ISO, budget, free)
+  afford <- affordable(new_solution, cost, budget_block, budget, free)
   if(afford) {
     current_solution <- new_solution
   }

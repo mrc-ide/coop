@@ -8,7 +8,7 @@
 #' @return Index of minimum solutions
 #' @export
 mins <- function(input_data, cl = FALSE){
-  m1 <- c(1, which(diff(input_data$DIDE_CODE) != 0) + 1)
+  m1 <- c(1, which(diff(input_data$solution_block) != 0) + 1)
   return(m1)
 }
 
