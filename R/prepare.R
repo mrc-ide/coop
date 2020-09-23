@@ -4,13 +4,15 @@
 #'
 #' @param input_data_raw Raw input data
 #'
+#' @importFrom rlang .data
+#'
 #' @return Sorted, non-dominated data
 #' @export
 prepare <- function(input_data_raw){
   stopifnot(all(c("budget_block", "solution_block", "cost", "y") %in% colnames(input_data_raw)))
 
   prepped_data <- input_data_raw %>%
-    dplyr::arrange(budget_block, solution_block, cost) %>%
+    dplyr::arrange(.data$budget_block, .data$solution_block, .data$cost) %>%
     non_dominated()
 
   return(prepped_data)
@@ -28,7 +30,7 @@ prepare_country <- function(input_data_raw){
   stopifnot(all(c("budget_block", "cost", "y") %in% colnames(input_data_raw)))
 
   prepped_data <- input_data_raw %>%
-    dplyr::arrange(budget_block, cost) %>%
+    dplyr::arrange(.data$budget_block, .data$cost) %>%
     non_dominated_country()
 
   return(prepped_data)

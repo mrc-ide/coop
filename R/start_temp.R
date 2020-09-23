@@ -4,6 +4,15 @@
 #' greater than the target acceptance rate
 #'
 #' @inheritParams sa
+#' @param target_acceptance Taget acceptance rate
+#' @param current_solution Current solution index
+#' @param cur_y Current solution out
+#' @param max_solution Max solution index
+#' @param min_solution Min solution index
+#' @param y Solution out
+#' @param cost Solution cost
+#' @param budget_block Budget blocks
+#' @param budget Budget
 #'
 #' @return A starting temperature
 #' @export

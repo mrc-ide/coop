@@ -6,7 +6,7 @@ Author: Peter Winskill
 Maintainer: Peter Winskill <p.winskill@imperial.ac.uk>
 Description: Coop is a generalised heuristic for budget constrained optimisations using simulated annealing. 
     You can use coop to search for optimal combinations of scenarios (e.g. intervention mixes in different areas) which minimise a target outcome (e.g. cases or deaths).
-License: file LICENSE
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests:
@@ -14,3 +14,7 @@ Suggests:
 RoxygenNote: 7.1.1
 Depends:
     R (>= 4.0)
+Imports: 
+    magrittr,
+    dplyr,
+    rlang

@@ -8,6 +8,10 @@ move_up_down(solution, min_solution, max_solution)
 }
 \arguments{
 \item{solution}{Proposed solution (vector of indices)}
+
+\item{min_solution}{Min solution index}
+
+\item{max_solution}{Max solution index}
 }
 \value{
 Solution with one up and one down move

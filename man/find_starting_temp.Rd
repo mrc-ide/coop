@@ -18,6 +18,24 @@ find_starting_temp(
 )
 }
 \arguments{
+\item{target_acceptance}{Taget acceptance rate}
+
+\item{current_solution}{Current solution index}
+
+\item{cur_y}{Current solution out}
+
+\item{max_solution}{Max solution index}
+
+\item{min_solution}{Min solution index}
+
+\item{y}{Solution out}
+
+\item{cost}{Solution cost}
+
+\item{budget_block}{Budget blocks}
+
+\item{budget}{Budget}
+
 \item{free}{Free funds}
 }
 \value{

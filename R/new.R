@@ -5,6 +5,7 @@
 #' @param current_solution Current solution
 #'
 #' @inheritParams sa
+#' @inheritParams find_starting_temp
 #'
 #' @return A solution
 #' @export
@@ -28,6 +29,7 @@ up <- function(current_solution, max_solution, cost, budget_block, budget, free)
 #' @param current_solution Current solution
 #'
 #' @inheritParams sa
+#' @inheritParams find_starting_temp
 #'
 #' @return A solution
 #' @export
