@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="https://github.com/pwinskill/coop/blob/master/coop_logo.jpg" alt="Drawing" align="centre" style="width: 10px; border: 0;"/>
+<img src="https://github.com/mrc-ide/coop/blob/master/coop_logo.jpg" alt="Drawing" align="centre" style="width: 10px; border: 0;"/>
 
 # coop
 
@@ -11,14 +11,14 @@
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![R build
-status](https://github.com/pwinskill/coop/workflows/R-CMD-check/badge.svg)](https://github.com/pwinskill/coop/actions)
-[![codecov](https://codecov.io/gh/mrc-ide/nimue/branch/master/graph/badge.svg)](https://codecov.io/gh/pwinskill/coop)
+status](https://github.com/mrc-ide/coop/workflows/R-CMD-check/badge.svg)](https://github.com/mrc-ide/coop/actions)
+[![codecov](https://codecov.io/gh/mrc-ide/nimue/branch/master/graph/badge.svg)](https://codecov.io/gh/mrc-ide/coop)
 <!-- badges: end -->
 
 ## IMPORTANT NOTES
 
 :warning: This code is released with no support. Please submit any
-questions or bugs as [issues](https://github.com/pwinskill/coop/issues)
+questions or bugs as [issues](https://github.com/mrc-ide/coop/issues)
 and we will try to address them as quickly as possible.
 
 :warning: This code is under active development and so parameter names
@@ -37,5 +37,5 @@ You can install coop from github with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("pwinskill/coop")
+remotes::install_github("mrc-ide/coop")
 ```
