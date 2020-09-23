@@ -10,6 +10,8 @@
 #' @param frozen Number of attempts with no improvement in final frozen search
 #' @param free Free funds
 #'
+#' @importFrom utils tail
+#'
 #' @return A list with the solution index and trace
 #' @export
 sa <- function(input_data, input_budget, outer, inner,

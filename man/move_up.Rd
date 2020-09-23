@@ -8,6 +8,8 @@ move_up(solution, max_solution)
 }
 \arguments{
 \item{solution}{Proposed solution (vector of indices)}
+
+\item{max_solution}{Max solution index}
 }
 \value{
 Solution with one up move

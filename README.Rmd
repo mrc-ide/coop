@@ -21,6 +21,12 @@ knitr::opts_chunk$set(
 [![codecov](https://codecov.io/gh/mrc-ide/nimue/branch/master/graph/badge.svg)](https://codecov.io/gh/pwinskill/coop)
 <!-- badges: end -->
 
+## IMPORTANT NOTES
+
+:warning: This code is released with no support. Please submit any questions or bugs as [issues](https://github.com/pwinskill/coop/issues) and we will try to address them as quickly as possible.
+
+:warning: This code is under active development and so parameter names and behaviours will change without notice.
+
 Coop is a generalised approach to budget constrained optimisations using simulated annealing. You can use coop to find optimal combinations of scenarios (e.g. intervention mixes across districts) which minimise a target outcome (e.g. malaria cases). Optimal outcomes can be budget constrained at multiple levels (e.g. the solution must comply with global, regional and country budgets).
 
 ## Installation

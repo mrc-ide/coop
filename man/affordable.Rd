@@ -9,6 +9,12 @@ affordable(solution, cost, budget_block, budget, free)
 \arguments{
 \item{solution}{Proposed solution (vector of indices)}
 
+\item{cost}{Solution costs}
+
+\item{budget_block}{index of budget blocks}
+
+\item{budget}{Budget}
+
 \item{free}{Free funds}
 }
 \value{

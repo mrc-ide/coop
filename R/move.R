@@ -20,6 +20,7 @@ sample1 <- function(x){
 #'
 #' @param solution Proposed solution (vector of indices)
 #' @inheritParams sa
+#' @inheritParams find_starting_temp
 #'
 #' @return Solution with one up move
 #' @export
@@ -36,6 +37,7 @@ move_up <- function(solution, max_solution){
 #'
 #' @param solution Proposed solution (vector of indices)
 #' @inheritParams sa
+#' @inheritParams find_starting_temp
 #'
 #' @return Solution with one up and one down move
 #' @export

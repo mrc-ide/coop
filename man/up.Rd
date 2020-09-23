@@ -9,6 +9,14 @@ up(current_solution, max_solution, cost, budget_block, budget, free)
 \arguments{
 \item{current_solution}{Current solution}
 
+\item{max_solution}{Max solution index}
+
+\item{cost}{Solution cost}
+
+\item{budget_block}{Budget blocks}
+
+\item{budget}{Budget}
+
 \item{free}{Free funds}
 }
 \value{

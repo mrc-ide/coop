@@ -5,6 +5,9 @@
 #' Check a solution is affordable
 #'
 #' @param solution Proposed solution (vector of indices)
+#' @param cost Solution costs
+#' @param budget_block index of budget blocks
+#' @param budget Budget
 #' @inheritParams sa
 #'
 #' @return Boolean indicating if proposed solution is affordable or not
