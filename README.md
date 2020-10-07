@@ -17,6 +17,10 @@ status](https://github.com/mrc-ide/coop/workflows/R-CMD-check/badge.svg)](https:
 
 ## IMPORTANT NOTES
 
+This code is maintained for legacy purposes. For new projects requiring
+constrained optimisation I highly recommend the [ompr R
+package](https://dirkschumacher.github.io/ompr/)
+
 :warning: This code is released with no support. Please submit any
 questions or bugs as [issues](https://github.com/mrc-ide/coop/issues)
 and we will try to address them as quickly as possible.
